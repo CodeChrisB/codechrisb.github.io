@@ -1,0 +1,83 @@
+#skillBlock {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+/*Create Skill blocks*/
+.skill {
+    width: 20vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+    margin: 2.5vh 5vw;
+}
+
+.skill p{
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+    font-size: 15pt;
+    color: rgb(0, 0, 0);
+    padding-bottom: 5vw;
+}
+
+.skill .skillTitle {
+    text-align: center;
+}
+
+.skill img{
+    width: 3vw;
+    height: 3vw;
+    padding: 10px 0px 20px 10px;
+}
+
+
+
+.skill p{
+    text-align: center;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    #skillWrapper {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .skill {
+        width: 75%;
+    }
+
+    .skill .skillHeadline i {
+        font-size: 9vw;
+    }
+}
+
+@media screen and (min-width: 786px) {
+    #aboutContent {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .aboutContent {
+        width: 80vw;
+    }
+
+    #aboutContent img {
+        width: 50%;
+    }
+}

@@ -1,0 +1,116 @@
+#about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 0 0 5vw;
+}
+
+.aboutContent {
+    width: 40vw;
+
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 0 0 -5vw;
+}
+
+#about img {
+    width: 35%;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 4px 4px #5e5e5e;
+            box-shadow: 4px 4px 5px px #dbdbdb;
+}
+
+
+#mobileImg{
+    display: inline-block;
+    align-self: center;  
+}
+
+.mobile img{
+   height:150px;
+   padding-left: 100%;
+   padding-bottom: 10vw;
+   padding-left: 35vw;
+}
+
+
+#desktopImg img{
+  display: none;
+}
+
+
+@media screen and (max-aspect-ratio: 1/1) {
+    #aboutContent {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .aboutContent {
+        width: 60vw;
+    }
+
+    #aboutContent img {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    #mobileImg{
+        display: none;
+    }
+
+    
+    .aboutContent p{
+        width: 30vw;
+    }
+
+    #desktopImg img{
+        display: flex;
+        float: right;
+      margin-right: 30%;
+    }
+   
+}
+
+
+.aboutContent p{
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+    font-size: 15pt;
+    color: rgb(0, 0, 0);
+    padding-bottom: 5vw;
+    width: 50%;
+    padding-left: -50%;
+}
+
+.aboutContent h1{
+    font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+    font-size: 35pt;
+    color: rgb(0, 0, 0);
+    padding-bottom: 2vw;
+}
