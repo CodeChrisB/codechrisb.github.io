@@ -136,6 +136,14 @@ h1 {
     font-size: 34pt;
     font-weight: bolder;
     color: rgb(8, 78, 170);
-    padding-bottom: 2vw;
-    padding-left: 10vw;
+    padding-left: 30vw;
+}
+
+
+@media only screen and (min-width: 900px) {
+
+    .title h1{
+        padding-bottom: 2vw;
+        padding-left: 10vw;
+    }
 }

@@ -12,18 +12,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin: 0 0 0 5vw;
+    margin: 0 0 0 1vw;
 }
 
 .aboutContent {
-    width: 40vw;
-
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -32,8 +24,11 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            margin: 0 0 0 -5vw;
+text-align: left;
+padding-left: 25%;
 }
+
+
 
 #about img {
     width: 35%;
@@ -80,7 +75,7 @@
 }
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 900px) {
     #mobileImg{
         display: none;
     }
@@ -95,6 +90,11 @@
         float: right;
       margin-right: 30%;
     }
+
+    .aboutContent p{
+        width: 90%;
+        padding-bottom: 20px
+    }
    
 }
 
@@ -103,9 +103,8 @@
     font-family: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
     font-size: 15pt;
     color: rgb(0, 0, 0);
-    padding-bottom: 5vw;
-    width: 50%;
-    padding-left: -50%;
+    padding-bottom: 20px;
+    padding-left: -15%;
 }
 
 .aboutContent h1{
