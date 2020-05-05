@@ -5,6 +5,7 @@
     grid-gap: 15px;
     margin: 0 auto;
     margin-bottom: 10vh;
+    align-self: center;
 }
 
 .card {
