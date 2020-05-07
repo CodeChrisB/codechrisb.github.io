@@ -11,6 +11,7 @@
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+
 }
 
 /*Create Skill blocks*/
@@ -56,28 +57,10 @@
     }
 
     .skill {
-        width: 75%;
+        width: 100%;
     }
 
     .skill .skillHeadline i {
         font-size: 9vw;
-    }
-}
-
-@media screen and (min-width: 786px) {
-    #aboutContent {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: reverse;
-            -ms-flex-direction: column-reverse;
-                flex-direction: column-reverse;
-        margin: 0;
-    }
-
-    .aboutContent {
-        width: 80vw;
-    }
-
-    #aboutContent img {
-        width: 50%;
     }
 }

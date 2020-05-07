@@ -116,6 +116,10 @@
     transition: all 0.4s ease 0s;
 }
 
+#main{
+    align-self: center;
+    position: absolute;
+}
 
 
 /*Make the sections at least as high as a single screen*/
@@ -141,3 +145,4 @@
         padding-left: 10vw;
     }
 }
+
