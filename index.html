@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="./css/footerStyle.css">
 
     <!--Js Scripts-->
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <sripc src="./js/cwGrapper.js"/>
 
 
 </head>
@@ -140,7 +141,7 @@
         <!--Cards Projects-->
 
        
-        <section class="scren">
+        <section class="screen">
 
         <div class="wrapper">
             <div class="title">
@@ -160,7 +161,9 @@
                 </a>
                 
                 
-            <!--Cards Social Media-->
+
+
+        <!--Cards Social Media-->
 
 
 
@@ -207,6 +210,15 @@
         </div>
         </section>
 
+
+
+        <section class="screen"></section>
+
+            <div class="lastCw"></div>
+
+
+
+
         <div id="footer">
             <p>
                 Copyright © 2020 Christopher Buchberger. All right reserved. <a href="https://www.termsfeed.com/terms-conditions/263df3c0f03ac2c49da7d72b9572c480">Terms of Use</a><br> Icons by <a href="https://icons8.com">Icons8</a>
@@ -220,5 +232,21 @@
 
 </html>
 
+
+
 <script>
+$(document).ready( function() {
+    
+    // Pure JavaScript
+var els = document.getElementsByClassName('hey');
+els[0].innerHTML;
+
+// jQuery
+$(".hey:eq(0)").html();
+$(".hey").eq(0).html();
+$(".hey:first").html();
+$(".hey").first().html();
+$(".hey:first-child").html();
+    
+    });
 </script>
