@@ -10,9 +10,10 @@ var missingLines =0
 
 
 for(let i = 0; i< leftJson.length; i++){
+    console.log(getTag(leftJson[i]),getTag(rightJson[i-missingLines]))
     if(getTag(leftJson[i]) == getTag(rightJson[i-missingLines])){
-        result += leftJson[i]+'\n'
-        console.log('a',leftJson[i])
+        result += rightJson[i-missingLines]+'\n'
+        console.log('a',rightJson[i])
     }else{
         missingLines++
         if(leftJson[i].indexOf('{') <0 && leftJson[i].indexOf('}') <0){
@@ -32,20 +33,6 @@ for(let i = 0; i< leftJson.length; i++){
 
 document.getElementById('resultBox').style ='display: block'
 document.getElementById('resultBox').value = result
-var log = {
-    de: {
-        hi: 'hallo',
-        he: 'nein',
-        help : {
-            hue: 'hilfe',
-            fd: 'fckno',
-            df: 'fd'
-        }
-    }
-}
-
-
-
 }
 
 function getTag(str){
@@ -57,4 +44,11 @@ function getTag(str){
         return str
     }*/
     return str
+}
+
+
+function reset(){
+document.getElementById('leftBox').value =''
+document.getElementById('rightBox').value=''
+document.getElementById('resultBox').style ='display: none'
 }

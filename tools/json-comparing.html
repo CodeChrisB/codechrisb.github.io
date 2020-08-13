@@ -19,10 +19,22 @@
 
 
 <body>
-    <textarea id="leftBox" placeholder="JSON to compare" rows="4" cols="50"></textarea>
-    <textarea id="rightBox" placeholder="JSON to compare against" rows="4" cols="50"></textarea>
+    <textarea id="leftBox" placeholder="JSON to compare" rows="4" cols="50"> de: {
+        hi: 'hallo',
+        he: 'nein',
+        help : {
+            hue: 'hilfe',
+            fd: 'fckno',
+            df: 'fd'
+        }
+    }</textarea>
+    <textarea id="rightBox" placeholder="JSON to compare against" rows="4" cols="50"> en: {
+        hi: 'hello',
+        he: 'no',
+    }</textarea>
     <br>
     <button onclick="compareJSON()">Compare JSON</button>
+    <button onclick="reset()">Rest Text</button>
     <br>
     <div class="result"></div>
     <textarea style="display: none" id="resultBox" placeholder="Result" rows="40" cols="50"></textarea>
