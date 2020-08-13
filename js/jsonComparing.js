@@ -5,7 +5,7 @@ return
 let leftJson = document.getElementById('leftBox').value.split("\n");  
 let rightJson = document.getElementById('rightBox').value.split("\n");  
 let result = ''
-let addedLines = 'Lines that are missing :'
+let addedLines = 'Lines that were missing :'
 var missingLines =0
 
 
@@ -21,11 +21,11 @@ for(let i = 0; i< leftJson.length; i++){
             if(pos>0){
                 result += leftJson[i].substring(0,pos+1)+'\n'
                // console.log('c',leftJson[i].substring(0,pos+1)+'\n')
-                addedLines += '\n'+(i+1)
+                addedLines += '\n'+(i+1)+' ' +leftJson[i].substring(0,pos+1).trim(' ','')
             }
         }else{
             result += leftJson[i]+'\n'
-            addedLines += '\n'+(i+1)
+            addedLines += '\n'+(i+1) +' '+leftJson[i].trim(' ','')
             //console.log('c',leftJson[i])
         }
         
