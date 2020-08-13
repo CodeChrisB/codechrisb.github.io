@@ -55,4 +55,5 @@ function reset(){
 document.getElementById('leftBox').value =''
 document.getElementById('rightBox').value=''
 document.getElementById('resultBox').style ='display: none'
+document.getElementById('missingBox').style ='display: none'
 }
