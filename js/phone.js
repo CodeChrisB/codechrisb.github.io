@@ -9,12 +9,10 @@ function loadHomeScreen() {
   html+= '<div class="flex-container">'
   html += toHtml(apps.bottom)
   html += "</div></div></div>"
-  console.log(html)
   document.getElementById("content").innerHTML=html;
 }
 function toHtml(apps){
   let html =''
-  console.log(apps)
   apps.forEach(function(app) {
     html += '<div class="fit" onclick="loadApp'+app.id+'()">';
     html += '<img src="img/'+app.src+'">'
