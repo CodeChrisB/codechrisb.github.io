@@ -32,7 +32,7 @@ function loadApp8() {
 }
 function loadApp9() {
   /* load App9 here */
-  alert('A fake google chrome with pretty articles about\nmyselfs will be shown here :)')
+  alert('One day here will be more information')
 }
 function loadApp10() {
   /* load App10 here */
