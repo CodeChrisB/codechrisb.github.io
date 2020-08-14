@@ -1,5 +1,4 @@
 function loadHomeScreen() {
-  console.log('Loading: Homescreen')
   let html = '<div class="flex-container">'
   html += toHtml(apps.top)
   html += "</div><div id='bottom'>"
@@ -11,7 +10,6 @@ function loadHomeScreen() {
 function toHtml(apps){
   let html =''
   apps.forEach(function(app) {
-    console.log('Loading: ' + app.src.replace('.png',''))
     html += '<div class="fit" onclick="loadApp'+app.id+'()">';
     html += '<img src="img/'+app.src+'">'
     html += '</div>'
