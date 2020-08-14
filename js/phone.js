@@ -16,32 +16,27 @@ function toHtml(apps){
   let html =''
   console.log(apps)
   apps.forEach(function(app) {
-    html += '<div class="fit" onclick="load_app'+app.id+'()">';
+    html += '<div class="fit" onclick="loadApp'+app.id+'()">';
     html += '<img src="img/'+app.src+'">'
     html += '</div>'
   });
   return html
 }
-/*
-<div class="fit" onclick="load_home()">
-  <img src="img/instagram.png">
-</div>
-*/
 
 const apps = {
   top : [
-    {id: '1', src:'instagram.png',url:'instagram.com/codechrisb'},
-    {id: '2', src:'instagram.png',url:'coderwars.com/users/codechrisb'},
-    {id: '3', src:'instagram.png',url:'instagram.com/codechrisb'},
-    {id: '4', src:'instagram.png',url:'coderwars.com/users/codechrisb'},
-    {id: '5', src:'instagram.png',url:'instagram.com/codechrisb'}
+    {id: '1', src:'instagram.png',},
+    {id: '2', src:'foodgent.png',},
+    {id: '3', src:'nan.png',},
+    {id: '4', src:'nan.png',},
+    {id: '5', src:'nan.png',} 
   ],
   bottom : [
-    {id: '6', src:'instagram.png',url:'instagram.com/codechrisb'},
-    {id: '7', src:'instagram.png',url:'coderwars.com/users/codechrisb'},
-    {id: '8', src:'instagram.png',url:'instagram.com/codechrisb'},
-    {id: '9', src:'instagram.png',url:'coderwars.com/users/codechrisb'},
-    {id: '10', src:'instagram.png',url:'instagram.com/codechrisb'}
+    {id: '6', src:'nan.png'},
+    {id: '7', src:'nan.png'},
+    {id: '8', src:'google.png'},
+    {id: '9', src:'nan.png'},
+    {id: '10', src:'gallery.png',}
   ]
 
 

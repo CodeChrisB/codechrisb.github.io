@@ -1,84 +1,24 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <!--Meta Data-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='shortcut icon' type='image/x-icon' href='./img/headerIcon.png' >
-    <!--Css Styling-->
-    <link rel="stylesheet" href="./css/phone.css">
-    <link rel="stylesheet" href="./css/flex.css">
-    <!--Js Scripts-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="./js/phone.js"></script>
+        <!--Meta Data-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='shortcut icon' type='image/x-icon' href='./img/headerIcon.png' >
+        <!--Css Styling-->
+        <link rel="stylesheet" href="./css/phone.css">
+        <link rel="stylesheet" href="./css/flex.css">
+        <!--Js Scripts-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="./js/phone.js"></script>
+        <script src="./js/apps.js"></script>
+    </head>
 
-
-
-
-
-<body onload="loadHomeScreen()">
-    <div class="smartphone">
-        <div id="content" class="content">
-            <div class="flex-container">
-                <div class="fit" onclick="load_home()">
-                        <img  src="img/instagram.png">
-                </div>
-                <div>
-                    <a class="fit" href="https://www.codewars.com/users/CodeChrisB">
-                        <img  src="img/instagram.png">
-                    </a>
-                </div>
-                <div>
-                    <a class="fit"href="https://google.com/">
-                        <img  src="img/google.png">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://codepen.io/CodeChrisB">
-                        <img  src="img/codepen.png">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://codepen.io/CodeChrisB">
-                        <img  src="img/codepen.png">
-                    </a>
-                </div>    
-            </div>
-
-            <div id='bottom'>
-                <div class="flex-container">
-                    <div class="fit" onclick="load_home()">
-                            <img  src="img/instagram.png">
-                    </div>
-                    <div>
-                        <a class="fit" href="https://www.codewars.com/users/CodeChrisB">
-                            <img  src="img/instagram.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="fit"href="https://google.com/">
-                            <img  src="img/google.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://codepen.io/CodeChrisB">
-                            <img  src="img/codepen.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://codepen.io/CodeChrisB">
-                            <img  src="img/codepen.png">
-                        </a>
-                    </div>    
-                </div>
-            </div>
-        </div>
-        <div onClick="close()" class="dot"></div>
-      </div>
-    </div>
-      
-</body>
+<html>
+    <body onload="loadHomeScreen()">
+        <div class="smartphone">
+            <div id="content" class="content"></div>
+            <div onClick="close()" class="dot"></div>
+        </div>    
+    </body>
 </html>
 
 
