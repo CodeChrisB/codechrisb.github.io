@@ -7,253 +7,81 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='shortcut icon' type='image/x-icon' href='./img/headerIcon.png' >
     <!--Css Styling-->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/cards.css">
-    <link rel="stylesheet" href="./css/paralex.css">
-    <link rel="stylesheet" href="./css/about.css">
-    <link rel="stylesheet" href="./css/myskills.css">
-    <link rel="stylesheet" href="./css/footerStyle.css">
-
+    <link rel="stylesheet" href="./css/phone.css">
+    <link rel="stylesheet" href="./css/flex.css">
     <!--Js Scripts-->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <sripc src="./js/cwGrapper.js"/>
+    <script src="./js/phone.js"></script>
 
 
-</head>
 
 
-<header>
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="about.html">About Me</a>
-        <div class="dropdown">
-            <button class="dropbtn">Projects
-        <i class="fa fa-caret-down"></i>
-      </button>
-            <div class="dropdown-content">
-                <a href="./projects/foodgent/foodgent.html">FoodGent</a>
+
+<body onload="loadHomeScreen()">
+    <div class="smartphone">
+        <div id="content" class="content">
+            <div class="flex-container">
+                <div class="fit" onclick="load_home()">
+                        <img  src="img/instagram.png">
+                </div>
+                <div>
+                    <a class="fit" href="https://www.codewars.com/users/CodeChrisB">
+                        <img  src="img/instagram.png">
+                    </a>
+                </div>
+                <div>
+                    <a class="fit"href="https://google.com/">
+                        <img  src="img/google.png">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://codepen.io/CodeChrisB">
+                        <img  src="img/codepen.png">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://codepen.io/CodeChrisB">
+                        <img  src="img/codepen.png">
+                    </a>
+                </div>    
+            </div>
+
+            <div id='bottom'>
+                <div class="flex-container">
+                    <div class="fit" onclick="load_home()">
+                            <img  src="img/instagram.png">
+                    </div>
+                    <div>
+                        <a class="fit" href="https://www.codewars.com/users/CodeChrisB">
+                            <img  src="img/instagram.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="fit"href="https://google.com/">
+                            <img  src="img/google.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://codepen.io/CodeChrisB">
+                            <img  src="img/codepen.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://codepen.io/CodeChrisB">
+                            <img  src="img/codepen.png">
+                        </a>
+                    </div>    
+                </div>
             </div>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-            <div class="dropdown-content">
-                <a href="./tools/json-comparing.html">JSON Comparer</a>
-            </div>
-        </div>
+        <div onClick="close()" class="dot"></div>
+      </div>
     </div>
-</header>
-
-
-
-<body>
-    <div id="main">
-
-            <div class="wp-block-cover-image" style="background-image:url(./img/cbuch.svg">
-                <h1 class="wp-block-cover-image-text">Christopher Buchberger</h1>
-            </div>
-
-
-        <!--About me Section-->
-        <section class="screen">
-
-            <div class="title">
-            
-            </div>
-
-            <div class="mobile" id='mobileImg'>
-                <img src='./img/codechrisb.jpeg' alt='cannot display image'>
-            </div>
-
-            <div id='about'>
-            
-                <div class='aboutContent'>
-                    <p>Hello, my name is Christopher Buchberger im 18 years old and I attend currently the higher technical colleage in Leonding.</p>
-                    <p>Im a programmer with 3 years of experience in coding and technical informatics. My main skills are project management, coding, solving tasks and my ability to stay calm in most scenarios. I try to excercise my skills as often as I
-                        can and like to learn new things to expand my horizon and advance personal</p>
-                    <p>My enthusiasm to create new things and my perfectionist personality, helps me a lot during development of all my projects. I love to work on projects where I am able to be creative. The creation of something new from scratch is particularly special.</p>
-                    <p>My motivation for developing can be split up into my curiosity for exploring new technology and all the positive feedback I get from my colleagues for all my projects.</p>
-                </div>
-                <div id="desktopImg" class='desktop'>
-                    <img src='./img/codechrisb.jpeg' alt='cannot display image'>
-                </div>
-            </div>
-        </section>
-
-        <!--Skill Section-->
-
-        <section class='screen'>
-
-            <div class="title">
-                <h1 >My Skills</h1>
-            </div>
-
-            <div id='skillBlock'>
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/ios-development.png">
-                        <h2>Coding</h2>
-                    </div>
-                    <p>
-                        My task solving skills are quite good. Being able to solve even complex tasks is a very important skill in the nowadys fast growing society.
-                    </p>
-                </div>
-
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/business-conference-female-speaker.png">
-                        <h2>Social</h2>
-                    </div>
-                    <p>I love to work with other people, this is why I am one of the Group leaders for the Youth Red Cross in Neuhofen a.d Krems.
-                    </p>
-                </div>
-
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/teamwork.png">
-                        <h2>Teamwork</h2>
-                    </div>
-                    <p>According to my colleagues I am very good at teamwork and managing projects. For most teamprojects I use a private Github repository. </p>
-                </div>
-
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/communication.png">
-                        <h2>Project Managing</h2>
-                    </div>
-                    <p>In all teamprojects so far in the HTL Leonding I was the project manager. Which means I coordinate the tasks for every group member, keep in touch with the client and communicate between both sides.</p>
-                </div>
-
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/creativity.png" />
-                        <h2>Creativty</h2>
-                    </div>
-                    <p>My creativty helps me a lot in my everyday life as in work. Creativty is one of the most human skill. Using my creativty helps me cope with things I do not quite understand.</p>
-                </div>
-
-                <div class='skill'>
-                    <div class='skillTitle'>
-                        <img src="https://img.icons8.com/material-outlined/344/approval.png">
-                        <h2>Attitude</h2>
-                    </div>
-                    <p>In my opinion best skill is my attitude, I love to learn about new things. If I contact a company for an internship or for employment, the company can be sure I really want to do it.</p>
-                </div>
-            </div>
-        </section>
-
-
-        <!--Cards Projects-->
-
-       
-        <section class="screen">
-
-        <div class="wrapper">
-            <div class="title">
-                <h1>My Skills</h1>
-            </div>
-
-            <div class="box">
-                <a href="./projects/foodgent/foodgent.html">
-                    <div class="card">
-                        <div class="imgBx">
-                            <img src="./img/kuehli.png" alt="images">
-                        </div>
-                        <div class="details">
-                            <h2>FoodGent<br><span>Food Storage App</span></h2>
-                        </div>
-                    </div>
-                </a>
-                
-                
-
-
-        <!--Cards Social Media-->
-
-
-
-        <div class="wrapper">
-            <div class="title">
-                <h1>Social Media</h1>
-            </div>
-            <div class="box">
-                <a href="https://www.instagram.com/CodeChrisB">
-                    <div class="card">
-                        <div class="imgBx">
-                            <img src="https://img.icons8.com/officel/344/instagram-new.png" alt="instagram-icon">
-                        </div>
-                        <div class="details">
-                            <h2>Instagram<br><span>CodeChrisB</span></h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.github.com/CodeChrisB">
-                    <div class="card">
-                        <div class="imgBx">
-                            <img src="https://img.icons8.com/clouds/344/github.png" alt="images">
-                        </div>
-                        <div class="details">
-                            <h2>GitHub<br><span>CodeChrisB</span></h2>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://codepen.io/CodeChrisB">
-                    <div class="card">
-                        <div class="imgBx">
-                            <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/4096/codepen-4096-black.png" alt="codepen-icon">
-                        </div>
-                        <div class="details">
-                            <h2>CodePen<br><span>CodeChrisB</span></h2>
-                        </div>
-                    </div>
-                </a>
-
-
-
-
-            </div>
-        </div>
-        </section>
-
-
-
-        <section class="screen"></section>
-
-            <div class="lastCw"></div>
-
-
-
-
-        <div id="footer">
-            <p>
-                Copyright © 2020 Christopher Buchberger. All right reserved. <a href="https://www.termsfeed.com/terms-conditions/263df3c0f03ac2c49da7d72b9572c480">Terms of Use</a><br> Icons by <a href="https://icons8.com">Icons8</a>
-            </p>
-
-        </div>
-
+      
 </body>
-
-
-
 </html>
 
 
 
-<script>
-$(document).ready( function() {
-    
-    // Pure JavaScript
-var els = document.getElementsByClassName('hey');
-els[0].innerHTML;
 
-// jQuery
-$(".hey:eq(0)").html();
-$(".hey").eq(0).html();
-$(".hey:first").html();
-$(".hey").first().html();
-$(".hey:first-child").html();
-    
-    });
-</script>
+

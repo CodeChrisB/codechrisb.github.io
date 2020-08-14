@@ -1,0 +1,40 @@
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex-container-bottom {
+  display: flex;
+  flex-wrap: nowrap;
+  
+}
+
+.flex-container > div {
+  object-fit: cover;
+  margin: 10px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-size: 30px;
+}
+.smartphone .content {
+  background-image: url("../img/wallpaper.jpg");
+  background-size: 100%
+}
+
+.fit{
+  height: 8vh;
+  width: 80vh;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#bottom{
+  position:absolute;                  /* added */
+  bottom:0;                           /* added */
+  left:0;                           /* added */
+}
+
