@@ -18,7 +18,7 @@
 }
 
 .search-box{
-    font-size: 70%;
+    font-size: auto;
     border-radius: 25px;
     border: 2px solid lightgray;
     width: 60%;
@@ -55,19 +55,22 @@ h5{
 }
 
 .entry{
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    box-shadow: 1px 1px 1px  0 rgba(131, 131, 131, 0.349);
+    border-radius: 5px;
 }
 
 .lead{
     font-family: Arial, sans-serif;
     font-size: 1.1em;
     font-weight: 100;
-
     color: #234dcc;
 }
 
 .lead:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 p{
@@ -79,6 +82,9 @@ p{
     font-size: .9em;
     margin: 0;
     color: #048a5a;
+}
+.url:hover{
+    cursor: pointer;
 }
 
 .detail{

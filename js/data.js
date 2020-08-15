@@ -28,42 +28,42 @@ const gallery = {
 const google = {
     results : [
         {
+            url: 'facts.com/trend/this-is-codechrisb',
+            name: 'This is CodeChrisB',
+            desc: 'Today\'s hot topic is CodeChrisB. Who is he? where does he...',
+            id: '1'
+        },
+        {
+            url: 'coodergeeks.com/interviews/33213',
+            name: 'Some quick information about the Code of CodeChrisB',
+            desc: 'What are CodeChrisB favourite programing languages? What OS does he...',
+            id: '2'
+        },{
+            url: 'github.com/CodeChrisB',
+            name: 'Check out CodeChrisB Github',
+            desc: 'Check out CodeChrisB Github Repo\'s there you can see how he created all of this"!',
+            id: '3'
+        },{
             url: 'codechrisb.com',
             name: 'Code Chris World',
             desc: 'Just code world',
-            id: '1'
+            id: '4'
         },
         {
             url: 'codechrisb.com',
             name: 'Code Chris World',
             desc: 'Just code world',
-            id: '1'
+            id: '5'
         },{
             url: 'codechrisb.com',
             name: 'Code Chris World',
             desc: 'Just code world',
-            id: '1'
+            id: '6'
         },{
             url: 'codechrisb.com',
             name: 'Code Chris World',
             desc: 'Just code world',
-            id: '1'
-        },
-        {
-            url: 'codechrisb.com',
-            name: 'Code Chris World',
-            desc: 'Just code world',
-            id: '1'
-        },{
-            url: 'codechrisb.com',
-            name: 'Code Chris World',
-            desc: 'Just code world',
-            id: '1'
-        },{
-            url: 'codechrisb.com',
-            name: 'Code Chris World',
-            desc: 'Just code world',
-            id: '1'
+            id: '7'
         }
     ]
 }
