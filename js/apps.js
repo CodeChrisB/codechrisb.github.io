@@ -16,15 +16,15 @@ function loadApp2() {
 }
 function loadApp3() {
   /* load App3 here */
-  alert('One day here will be more information')
+  alert('4One day here will be more information')
 }
 function loadApp4() {
   /* load App4 here */
-  alert('One day here will be more information')
+  alert('3One day here will be more information')
 }
 function loadApp5() {
   /* load App5 here */
-  alert('One day here will be more information')
+  alert('2One day here will be more information')
 }
 function loadApp6() {
   /* load App6 here */
@@ -40,7 +40,7 @@ function loadApp8() {
 }
 function loadApp9() {
   /* load Messages*/
-  alert('One day you will be able to contact me here')
+  alert('1One day you will be able to contact me here')
 }
 function loadApp10() {
   /* load Gallery */ 

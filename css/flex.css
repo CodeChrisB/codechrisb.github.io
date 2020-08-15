@@ -13,7 +13,7 @@
   object-fit: cover;
   margin: 10px;
   text-align: center;
-  height: auto;
+  height: fit-content;
   width: auto;
   font-size: 30px;
 }
@@ -23,7 +23,7 @@
 }
 
 .fit{
-  height: 8vh;
+  height: auto;
   width: 8vh;
 }
 
