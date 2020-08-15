@@ -1,0 +1,83 @@
+
+/*Header*/
+
+.header{
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+    border-bottom: 1px lightgray solid;
+    align-items: center; 
+}
+
+.logo{
+    margin-top: 1vw;
+    margin-left: 1vw;
+    position: center;
+    height:50%;
+    width: auto;
+}
+
+.search-box{
+    font-size: 70%;
+    border-radius: 25px;
+    border: 2px solid lightgray;
+    width: 60%;
+    height: 50%; 
+    margin-left: 2vw;
+}
+.grid-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: auto;
+    background-color: white;
+    overflow-y: hidden;
+  }
+
+.fillBg{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Content */
+h5{
+   color: lightgray;
+}
+
+.websearch{
+    margin-left: 2vw;
+    width: 100%;
+}
+
+.entry{
+    margin-bottom: 2vh;
+}
+
+.lead{
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 100;
+
+    color: #234dcc;
+}
+
+.lead:hover{
+    text-decoration: underline;
+}
+
+p{
+    margin: 0;
+    white-space: normal;
+}
+
+.url{
+    font-size: .9em;
+    margin: 0;
+    color: #048a5a;
+}
+
+.detail{
+    font-size: .9em;
+}

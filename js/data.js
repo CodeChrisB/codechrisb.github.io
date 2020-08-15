@@ -23,3 +23,47 @@ const gallery = {
         {desc: 'Just some random pictures of myself packed into a collage.', src:'collage.jpeg',},
     ]
 }
+
+
+const google = {
+    results : [
+        {
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },
+        {
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },{
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },{
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },
+        {
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },{
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        },{
+            url: 'codechrisb.com',
+            name: 'Code Chris World',
+            desc: 'Just code world',
+            id: '1'
+        }
+    ]
+}
