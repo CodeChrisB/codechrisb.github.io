@@ -1,3 +1,11 @@
+//setup
+let html = ''
+function set(str){
+  console.log(str)
+  document.getElementById("content").innerHTML = str
+}
+
+
 function loadApp1() {
   /* load App1 here */
   window.open('https://www.instagram.com/codechrisb/')
@@ -24,17 +32,38 @@ function loadApp6() {
 }
 function loadApp7() {
   /* load App7 here */
-  alert('One day here will be more information')
+  alert('A small calculator will be here.')
 }
 function loadApp8() {
   /* load App8 here */
   alert('A fake google chrome with pretty articles about\nmyselfs will be shown here :)')
 }
 function loadApp9() {
-  /* load App9 here */
-  alert('One day here will be more information')
+  /* load Messages*/
+  alert('One day you will be able to contact me here')
 }
 function loadApp10() {
-  /* load App10 here */
-  alert('Gallery will be open here')
+  /* load Gallery */ 
+  const data = gallery.images    
+  html =''
+  html += '<div class="scrolling" overflow-x:hidden; height:100%">'
+  data.forEach(function(image) {
+
+    html += '<div class="responsive">'
+    html += '<div class="gallery">'
+    html += '<img src="img/phone/gallery/'+image.src+'" href="img/phone/gallery/'+image.src +'">'
+    html += '<div class="desc">'+ image.desc +'</div>'
+    html += '</div></div>'
+  });
+  html +='</div>'
+  set(html)
 }
+
+/*
+<div class="responsive">
+  <div class="gallery">
+      <img src="img_5terre.jpg" width="600" height="400">
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+*/
