@@ -1,5 +1,6 @@
 //Homescreen
 function loadHomeScreen() {
+  startTime()
   let html = '<div class="flex-container">'
   html += createIconRow(apps.top)
   html += "</div><div id='bottom'>"
@@ -39,3 +40,23 @@ flappy bird ????
 
 
 */
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  document.getElementById('time').innerHTML = h + ":" + m;
+  t = setTimeout(function() {
+    startTime()
+  }, 1000);
+}
+
