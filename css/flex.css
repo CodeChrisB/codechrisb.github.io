@@ -1,6 +1,9 @@
 .flex-container {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  height: fit-content;
+  width: auto;
+  grid-template-columns:  auto auto auto auto auto;
+  overflow-y: hidden;
 }
 
 .flex-container-bottom {
@@ -8,6 +11,8 @@
   flex-wrap: nowrap;
   
 }
+
+
 
 .flex-container > div {
   object-fit: cover;

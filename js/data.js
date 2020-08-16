@@ -4,7 +4,8 @@ const apps = {
       {id: '2', src:'foodgent.png',},
       {id: '3', src:'nan.png',},
       {id: '4', src:'nan.png',},
-      {id: '5', src:'nan.png',} 
+      {id: '5', src:'nan.png',} ,
+      {id: '11', src:'nan.png',} 
     ],
     bottom : [
       {id: '6', src:'nan.png'},
