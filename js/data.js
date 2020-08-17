@@ -75,3 +75,6 @@ tweets : [
     {id :'1295414547008892929'}
     ]  
 }
+
+
+let currentPage = ''

@@ -17,12 +17,12 @@ function loadApp2() {
 }
 function loadApp3() {
   /* load App3 here */
-  html='<div class="twitter-bg"><h1><center>&#128679;Work in Progess&#128679;</center></h1>'
-  twiter.tweets.reverse().forEach(function(tweet) {
-    html+='<blockquote class="twitter-tweet"></a><a href="https://twitter.com/CodeChrisB/status/'+tweet.id  + '"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
-  })
+  currentPage ='twitter'
+  html= '<div class="scrolling" overflow-x:hidden; height:100%">'
+  html+="<a class='twitter-timeline'  href='https://twitter.com/CodeChrisB' data-widget-id='your-widget-id' data-screen-name='twitterUsername'>Tweets by @twitterUsername</a>"         
   html+='</div>'
   set(html)
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)  [0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
   //<blockquote class="twitter-tweet"></a><a href="https://twitter.com/CodeChrisB/status/1295414547008892929"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 }
 function loadApp4() {
