@@ -18,7 +18,7 @@ function loadApp2() {
 function loadApp3() {
   /* load App3 here */
   currentPage ='twitter'
-  html= '<div class="scrolling" overflow-x:hidden; height:100%">'
+  html += '<div class="scrolling" overflow-x:hidden; height:100%">'
   html+="<a class='twitter-timeline'  href='https://twitter.com/CodeChrisB' data-widget-id='your-widget-id' data-screen-name='twitterUsername'>Tweets by @twitterUsername</a>"         
   html+='</div>'
   set(html)
