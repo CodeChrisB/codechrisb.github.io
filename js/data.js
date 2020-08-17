@@ -2,7 +2,7 @@ const apps = {
     top : [
       {id: '1', src:'instagram.png',},
       {id: '2', src:'foodgent.png',},
-      {id: '3', src:'nan.png',},
+      {id: '3', src:'twitter.png',},
       {id: '4', src:'nan.png',},
       {id: '5', src:'nan.png',} ,
       {id: '11', src:'nan.png',} 
@@ -67,4 +67,11 @@ const google = {
             id: '7'
         }
     ]
+}
+
+
+const twiter = {
+tweets : [
+    {id :'1295414547008892929'}
+    ]  
 }

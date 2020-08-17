@@ -17,7 +17,13 @@ function loadApp2() {
 }
 function loadApp3() {
   /* load App3 here */
-  alert('4One day here will be more information')
+  html='<div class="twitter-bg"><h1><center>&#128679;Work in Progess&#128679;</center></h1>'
+  twiter.tweets.reverse().forEach(function(tweet) {
+    html+='<blockquote class="twitter-tweet"></a><a href="https://twitter.com/CodeChrisB/status/'+tweet.id  + '"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+  })
+  html+='</div>'
+  set(html)
+  //<blockquote class="twitter-tweet"></a><a href="https://twitter.com/CodeChrisB/status/1295414547008892929"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 }
 function loadApp4() {
   /* load App4 here */
