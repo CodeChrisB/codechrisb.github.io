@@ -10,6 +10,7 @@
     width: 45vh;
     height: 70vh;
     float: left;
+    left: 25%;
     border: 16px black solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
