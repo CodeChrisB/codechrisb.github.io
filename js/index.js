@@ -45,8 +45,17 @@ function getCareer(){
 }
 
 function getCoding(){
+    let html ='<h3>Languages :</h3>' +
+    'Java (8/10)<br>'+
+    'C (7/10)<br>'+
+    'Javascript (6/10)<br>'+
+    'HTML & CSS (6/10)<br>'+
+    'C & C++ (4/10)<br>'
 
-    set('getCoding')
+    html+= 'You can see some example of my code on <a href="https://www.codewars.com/users/CodeChrisB/completed_solutions">Here on CodeWars</a>.'
+    html+= '<br>Or check out my <a href ="https://github.com/CodeChrisB/">Github</a> (even though most projects are private so yeah...)'
+   
+    set(html)
 }
 function getContact(){
 set('getContact')
@@ -60,12 +69,13 @@ set('getPhone')
 
 
 var timeline = [
-        {date: '2017-Current', text:'HTBLA Leonding'},
-        {date: '2014-2017', text:'NMS Neuhofen an der Krems'},
-        {date: '2014-2009', text:'Volksschule Kremsdorf'}
+    {date: '2017-Current', text:'HTBLA Leonding'},
+    {date: '2014-2017', text:'NMS Neuhofen an der Krems'},
+    {date: '2014-2009', text:'Volksschule Kremsdorf'}
 ]
     
 var career = [
-    {date: '2020', text:'Internship at <a href="https://www.cadt-solutions.com">CAD+T</a>'},
-    {date: '2016', text:'Internship at <a href="https://www.lpbz-ooeg.at/schloss-gschwendt">Schloss-Gschwendt</a>'},
+    {date: 'Future', text:'Maybe at your Company?<br><a  href="#" onclick="getContact()">Contact me</a>'},
+    {date: '2020', text:'Internship at <a href="https://www.cadt-solutions.com">CAD+T</a><br>8 Weeks<br> Frontend Development Javascript + Vue.js<br>Unit Testing'},
+    {date: '2016', text:'Internship at <a href="https://www.lpbz-ooeg.at/schloss-gschwendt">Schloss-Gschwendt</a><br>3 Days<br>We had to work at any Company for 3 days and I choosed this, because my Red Cross Group Leader recommended it to me.  </a>'},
 ]
