@@ -46,15 +46,15 @@ function getCareer(){
 
 function getCoding(){
     let html ='<h3>Languages :</h3>' +
-    'Java (8/10)<br>'+
-    'C (7/10)<br>'+
-    'Javascript (6/10)<br>'+
-    'HTML & CSS (6/10)<br>'+
-    'C & C++ (4/10)<br>'
+    'Java (8/10)*<br>'+
+    'C (7/10)*<br>'+
+    'Javascript (7/10)*<br>'+
+    'HTML & CSS (6/10)*<br>'+
+    'C & C++ (4/10)*<br>'
 
     html+= 'You can see some example of my code on <a href="https://www.codewars.com/users/CodeChrisB/completed_solutions">Here on CodeWars</a>.'
     html+= '<br>Or check out my <a href ="https://github.com/CodeChrisB/">Github</a> (even though most projects are private so yeah...)'
-   
+   html +='<h6>* That\'s how I would rank my self in these languages</h6>'
     set(html)
 }
 function getContact(){
@@ -70,9 +70,9 @@ set('getPhone')
 
 
 var timeline = [
-    {date: '2017-Current', text:'HTBLA Leonding'},
-    {date: '2014-2017', text:'NMS Neuhofen an der Krems'},
-    {date: '2014-2009', text:'Volksschule Kremsdorf'}
+    {date: '2017-Current', text:'<h4>HTBLA Leonding</h4>Fifth Year: NaN<br>Fourth Year: NaN<br>Thrid Year: Avg 1,53<br>Second Year: Avg 1.75<br> First Year: Avg 2,36'},
+    {date: '2014-2017', text:'<h4>NMS Neuhofen an der Krems</h4>Fourth Year: Avg 1.6<br>Thrid Year: Avg 1,4<br>Second Year: Avg 1.83<br> First Year: Avg 1.7<br>'},
+    {date: '2014-2009', text:'<h4>Volksschule Kremsdorf</h4>Fourth Year: Avg 1.5<br>Thrid Year: Avg 1,5<br>Second Year: No Grades Here!<br>First Year: No Grades Here!'}
 ]
     
 var career = [
