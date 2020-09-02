@@ -58,7 +58,8 @@ function getCoding(){
     set(html)
 }
 function getContact(){
-set('getContact')
+    let html = 'Christopher Buchberger<br>Phone : +43 623 67790005<br>Email : <a href="mailto:c.buchberger01@gmail.com">c.buchberger01@gmail.com></a>'
+set(html)
 }
 function getPhone(){
 set('getPhone')
@@ -75,7 +76,7 @@ var timeline = [
 ]
     
 var career = [
-    {date: 'Future', text:'Maybe at your Company?<br><a  href="#" onclick="getContact()">Contact me</a>'},
+    {date: 'Future', text:'Maybe at your Company ?<br><a  href="#" onclick="getContact()">Contact me</a>'},
     {date: '2020', text:'Internship at <a href="https://www.cadt-solutions.com">CAD+T</a><br>8 Weeks<br> Frontend Development Javascript + Vue.js<br>Unit Testing'},
     {date: '2016', text:'Internship at <a href="https://www.lpbz-ooeg.at/schloss-gschwendt">Schloss-Gschwendt</a><br>3 Days<br>We had to work at any Company for 3 days and I choosed this, because my Red Cross Group Leader recommended it to me.  </a>'},
 ]
