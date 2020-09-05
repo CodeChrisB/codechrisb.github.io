@@ -10,7 +10,7 @@ let visits = ''
 function getHome(){
 
     let currentPage= 'home';
-    let html = '<center><h1>Hello!</h1><br>So.... there is a bomb in front of you with a detonation timer with only 10 seconds left. Which wire would you cut?<br> <button class="button1">Cut green wire</button><button class="button2">Cut red wire</button><br><div id="visits">'+ sessionStorage.getItem('visits') +'</div></center>'
+    let html = '<center><h1>Hello!</h1><br>So.... there is a bomb in front of you with a detonation timer with only 10 seconds left. Which wire would you cut?<br> <button class="button1">Cut green wire</button><button class="button2">Cut red wire</button><br><div id="visits">'+ (sessionStorage.getItem('visits') != null ? sessionStorage.getItem('visits'): '') +'</div></center>'
     set(html)
 }
 
