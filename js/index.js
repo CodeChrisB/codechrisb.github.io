@@ -153,7 +153,54 @@ function getPhone(){
 set('getPhone')
 }
 
+/******************************************************************************
+Expirment Game
+******************************************************************************/
+function getExpirment(){
+    //the 3 game tabs
+    let html
+    ='<div style="width:100%">'+
+    '<div class="gameInfo" id="gamePanel"><h1>Info about the Game</h1>This is a global clicking game, you and all the other people who are on this page can play this game in realTime. (Well sort of I can think of some bugs)<br><br>The name of the bee is CodeBee (Why tho?)</div>'+
+    '<div id="gamePanel"><img src="./img/bee.png" width=50% onclick="addClick()"></div>'+
+    '<div id="gamePanel"><div id="clicks">'+getClicks()+'</div></div>'+
+    '</div><div style="height:80vh"><div>'
+    //the bee flying range
+    html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return false" onmousemove="return false" onMouseClick="return false" `><input type="range" min="1" max="2500"value="0" class="slider" id="myRange">'
+    set(html)
+    setSlider();
+}
 
+
+
+function addClick(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/codebee/awesomeclick");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('clicks').innerHTML= `${this.response.value}`
+        document.getElementById('myRange').value= `${this.response.value}`
+    }
+    xhr.send();
+}
+    
+function getClicks(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/get/codebee/awesomeclick");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('clicks').innerHTML= `${this.response.value}`
+    }
+    xhr.send();
+}
+function setSlider(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/get/codebee/awesomeclick");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('myRange').value= `${this.response.value}`
+    }
+    xhr.send();
+}
 
 
 

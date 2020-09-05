@@ -43,11 +43,13 @@
 
 /* Place the container to the left */
 .left {
+  position: absolute;
   left: 0;
 }
 
 /* Place the container to the right */
 .right {
+  position: absolute;
   left: 50%;
 }
 
