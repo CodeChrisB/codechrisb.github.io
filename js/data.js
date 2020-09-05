@@ -73,4 +73,6 @@ const google = {
     ]
 }
 
-let currentPage = ''
+let currentPage = '';
+
+

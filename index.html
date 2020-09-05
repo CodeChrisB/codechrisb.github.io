@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./css/timeline.css">
         <!--Js Scripts-->
         <script src="./js/index.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="./js/data.js"></script>
 </head>
 
@@ -15,7 +16,7 @@
 
 
 <html>
-  <body>
+  <body onload="load()">
         <div class="wrapper">
           
           <div class="top_navbar">
@@ -66,11 +67,18 @@
           
           <div class="main_container">
             <div class="item" id="item">
-             Welcome<br>
-             This is the Home Page of the CCB Website. Im gonna add stuff later!
             </div>
           </div>
         </div>
 
   </body>
 </html>
+
+<script>
+  function load(){
+    $.getJSON("https://api.countapi.xyz/hit/codechrisb.github.io/visits", function(response) {
+        sessionStorage.setItem('visits','My Website has been called : '+ response.value +' times.')
+        getHome()
+    });
+  }
+  </script>

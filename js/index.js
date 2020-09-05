@@ -6,11 +6,20 @@ function set(str){
 
 
 let currentPage= 'home';
-
+let visits = ''
 function getHome(){
 
-    set('getHome')
+    let currentPage= 'home';
+    let html = '<center><h1>Hello!</h1><br>So.... there is a bomb in front of you with a detonation timer with only 10 seconds left. Which wire would you cut?<br> <button class="button1">Cut green wire</button><button class="button2">Cut red wire</button><br><div id="visits">'+ sessionStorage.getItem('visits') +'</div></center>'
+    set(html)
 }
+
+
+
+
+
+
+
 
 function getAbout(){
     let html ='<br><h3>About me</h3><br>Hey, my name is Christopher Buchberger'+
@@ -71,6 +80,7 @@ function setMyLifeTime(){
     years = parseInt(months / 12);
     months -= (years * 12);
     // Format age as "xx years, yy months, zz days"
+
     var text = "";
     if (years) {
       text = years + (years > 1 ? " years" : " year");
@@ -87,8 +97,8 @@ function setMyLifeTime(){
       }
       text = text + days + (days > 1 ? " days" : " day")
     }
-    console.log(text);
-    document.getElementById('age').innerHTML = 'I\'m currently '+text + ' old.';
+    console.log(years<140);
+    document.getElementById('age').innerHTML = 'I\'m currently ' + (years<125 ?  (text +' old.'): 'dead');
 }
 
 
