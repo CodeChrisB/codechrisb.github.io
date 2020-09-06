@@ -74,5 +74,5 @@ const google = {
 }
 
 let currentPage = '';
-
+var beeGameLimit = 700;
 

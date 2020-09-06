@@ -156,6 +156,10 @@ set('getPhone')
 /******************************************************************************
 Expirment Game
 ******************************************************************************/
+
+var currentClicks = 0
+const maxClicks = 100000
+var maxed =-1
 function getExpirment(){
     //the 3 game tabs
     let html
@@ -165,7 +169,9 @@ function getExpirment(){
     '<div id="gamePanel"><div id="clicks">'+getClicks()+'</div></div>'+
     '</div><div style="height:80vh"><div>'
     //the bee flying range
-    html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return false" onmousemove="return false" onMouseClick="return false" `><input type="range" min="1" max="2500"value="0" class="slider" id="myRange">'
+    html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return false" onmousemove="return false" onMouseClick="return false" `><input type="range" min="1" max="'+maxClicks+'"value="0" class="slider" id="myRange">'
+    //reload when maxed out
+    html+='<div id="reload"><h1 style="padding-top: 3vh;">Yes CodeBee Needs 100.000 Clicks to get to New York</h1></div>'
     set(html)
     setSlider();
 }
@@ -173,14 +179,22 @@ function getExpirment(){
 
 
 function addClick(){
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/hit/codebee/awesomeclick");
-    xhr.responseType = "json";
-    xhr.onload = function() {
-        document.getElementById('clicks').innerHTML= `${this.response.value}`
-        document.getElementById('myRange').value= `${this.response.value}`
+
+    console.log('start')
+    if(currentClicks<maxClicks){
+        console.log('click')
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.countapi.xyz/hit/codebee/awesomeclick");
+        xhr.responseType = "json";
+        xhr.onload = function() {
+            var check =  Math.min(`${this.response.value}`,maxClicks);
+           
+            console.log(check)
+            document.getElementById('clicks').innerHTML= check
+            document.getElementById('myRange').value= `${this.response.value}`
+        }
+        xhr.send();
     }
-    xhr.send();
 }
     
 function getClicks(){
@@ -189,12 +203,27 @@ function getClicks(){
     xhr.responseType = "json";
     xhr.onload = function() {
         document.getElementById('clicks').innerHTML= `${this.response.value}`
+        currentClicks = `${this.response.value}`
     }
     xhr.send();
+
+
+    if(currentClicks>=maxClicks && maxed<1){
+        maxed=1
+        setReload()
+    }
+
     t = setTimeout(function() {
         getClicks()
       }, 100);
 }
+
+function setReload(){
+    maxed = 1
+    let html = '<button class="button1">Reset the game</button>'
+    document.getElementById("reload").innerHTML = html
+}
+
 function setSlider(){
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.countapi.xyz/get/codebee/awesomeclick");
