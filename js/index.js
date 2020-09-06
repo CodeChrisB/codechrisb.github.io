@@ -191,6 +191,9 @@ function getClicks(){
         document.getElementById('clicks').innerHTML= `${this.response.value}`
     }
     xhr.send();
+    t = setTimeout(function() {
+        getClicks()
+      }, 100);
 }
 function setSlider(){
     var xhr = new XMLHttpRequest();
