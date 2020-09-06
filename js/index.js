@@ -158,7 +158,8 @@ Expirment Game
 ******************************************************************************/
 
 var currentClicks = 0
-const maxClicks = 100000
+const maxClicks = 1000000
+const distance = 66564600 //meters between Linz and New York 
 var maxed =-1
 function getExpirment(){
     //the 3 game tabs
@@ -171,7 +172,7 @@ function getExpirment(){
     //the bee flying range
     html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return false" onmousemove="return false" onMouseClick="return false" `><input type="range" min="1" max="'+maxClicks+'"value="0" class="slider" id="myRange">'
     //reload when maxed out
-    html+='<div id="reload"><h1 style="padding-top: 3vh;">Yes CodeBee Needs 100.000 Clicks to get to New York</h1></div>'
+    html+='<div id="reload"><h1 style="padding-top: 3vh;">CodeBee Needs 1.000.000 Clicks to get to New York<br>This means CodeBee flew a total distance of :'+(1000000-currentClicks) + ' clicks to get to New York<h2><br>This means CodeBee flew a total distance of :'+((currentClicks/maxClicks)*(distance/(100*1000))).toFixed(2)+' kilometers.</h1></div>'
     set(html)
     setSlider();
 }
@@ -184,7 +185,7 @@ function addClick(){
     if(currentClicks<maxClicks){
         console.log('click')
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.countapi.xyz/hit/codebee/awesomeclick");
+        xhr.open("GET", "https://api.countapi.xyz/hit/codebee");
         xhr.responseType = "json";
         xhr.onload = function() {
             var check =  Math.min(`${this.response.value}`,maxClicks);
@@ -199,11 +200,17 @@ function addClick(){
     
 function getClicks(){
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/get/codebee/awesomeclick");
+    xhr.open("GET", "https://api.countapi.xyz/get/codebee");
     xhr.responseType = "json";
     xhr.onload = function() {
         document.getElementById('clicks').innerHTML= `${this.response.value}`
         currentClicks = `${this.response.value}`
+        document.getElementById('reload').innerHTML= 
+        '<h2><br>CodeBee needs ' +(1000000-currentClicks) + ' clicks ('+
+         (distance/10000-((currentClicks/maxClicks)*(distance/(100*1000)))).toFixed(2)  +
+        ' km) to get to New York<h2><br>This means CodeBee flew a total distance of : '+
+        ((currentClicks/maxClicks)*(distance/(100*1000))).toFixed(2)+' kilometers.'+
+        '<div id="beespeed">One click is the equivalent of Codebee flying for 10 Seconds at 24kph (~15mph)</div>'
     }
     xhr.send();
 
@@ -212,7 +219,6 @@ function getClicks(){
         maxed=1
         setReload()
     }
-
     t = setTimeout(function() {
         getClicks()
       }, 100);
@@ -226,7 +232,7 @@ function setReload(){
 
 function setSlider(){
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/get/codebee/awesomeclick");
+    xhr.open("GET", "https://api.countapi.xyz/get/codebee");
     xhr.responseType = "json";
     xhr.onload = function() {
         document.getElementById('myRange').value= `${this.response.value}`
