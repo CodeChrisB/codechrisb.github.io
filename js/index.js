@@ -8,18 +8,11 @@ function set(str){
 let currentPage= 'home';
 let visits = ''
 function getHome(){
-
     let currentPage= 'home';
-    let html = '<center><h1>Hello!</h1><br>So.... there is a bomb in front of you with a detonation timer with only 10 seconds left. Which wire would you cut?<br> <button class="button1">Cut green wire</button><button class="button2">Cut red wire</button><br><div id="visits">'+ (sessionStorage.getItem('visits') != null ? sessionStorage.getItem('visits'): '') +'</div></center>'
+    let html = getWave()
+    html+='<center><h1>Hello!</h1><br>So.... there is a bomb in front of you with a detonation timer with only 10 seconds left. Which wire would you cut?<br> <button class="button1">Cut green wire</button><button class="button2">Cut red wire</button><br><div id="visits">'+ (sessionStorage.getItem('visits') != null ? sessionStorage.getItem('visits'): '') +'</div></center>'
     set(html)
 }
-
-
-
-
-
-
-
 
 function getAbout(){
     let html ='<br><h3>About me</h3><br>Hey, my name is Christopher Buchberger'+
@@ -51,8 +44,6 @@ function getAbout(){
     setMyLifeTime()
 
 }
-
-
 
 function setMyLifeTime(){
 
@@ -101,33 +92,73 @@ function setMyLifeTime(){
     document.getElementById('age').innerHTML = 'I\'m currently ' + (years<125 ?  (text +' old.'): 'dead');
 }
 
-
 function getResume(){
     currentPage='resume'
-    let html = '<div class="timeline">'
-    var left = true
+    let html = '<div class="entries">'
     timeline.forEach(function(result) {
-        let align = left ? 'left' : 'right'
-    html += '<div class="container '+ align+'"><div class="content">'+
-        '<h3>'+ result.date+'</h3>'+
-        '<p>'+result.text+'</p></div></div>'
-        left =!left
+    html += '<div class="entry"><div class="title">'+result.date +'</div>'+
+        '<div class="body"><p>'+result.text+'</p></div></div>'
     });
+
     set(html)
 }
 
 function getCareer(){
     urrentPage='career'
-    let html = '<div class="timeline">'
-    var left = true
+    let html = '<div class="container">  <div class="navbar">    <a href="">      <i class="fa fa-bars" aria-hidden="true"></i>    </a>    <div class="profile-pic">      <a href="https://www.instagram.com/CodeChrisB/"><img src="./img/meLogo.jpeg" alt="" /></a>      <div class="notification"></div>    </div>    <span>My Career</span>  </div>    <div class="header">    <div class="color-overlay">      <div class="day-number">'+getDay()+'</div>      <div class="date-right">        <div class="day-name">'+ getDayName()+'</div>        <div class="month">'+getMonthYear()+'</div>      </div>    </div>      </div>  <div class="timeline"><ul>'
+    var left = true                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
     career.forEach(function(result) {
-        let align = left ? 'left' : 'right'
-    html += '<div class="container '+ align+'"><div class="content">'+
-        '<h3>'+ result.date+'</h3>'+
-        '<p>'+result.text+'</p></div></div>'
-        left =!left
+        html += '<li>'+
+        '<div class="bullet green"></div>'+
+        '<div class="time">'+result.date+'</div>'+
+        '<div class="desc">'+
+        '  <h3>'+result.title+'</h3>'+
+        '  <h4>'+result.text+'</h4>'+
+        '</div>'+
+      '</li>'
+      
     });
+    html+='</ul></div><h2>ToDo: change the colors so it looks better :D</h2>'
     set(html)
+}
+function getDay(){
+    var d = new Date();
+
+    
+    return d.getDate()
+}
+
+function getDayName(){
+    var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    
+    return weekday[d.getDay()];
+}
+function getMonthYear(){
+    var d = new Date();
+    var month = new Array(12);
+    month[0] = "Jannuary";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+
+    
+    return month[d.getMonth()];
 }
 
 function getCoding(){
@@ -158,6 +189,7 @@ Expirment Game
 ******************************************************************************/
 
 var currentClicks = 0
+var thisSittingClicks=0;
 const maxClicks = 1000000
 const distance = 66564600 //meters between Linz and New York 
 var maxed =-1
@@ -167,43 +199,58 @@ function getExpirment(){
     ='<div style="width:100%">'+
     '<div class="gameInfo" id="gamePanel"><h1>Info about the Game</h1>This is a global clicking game, you and all the other people who are on this page can play this game in realTime. (Well sort of I can think of some bugs)<br><br>The name of the bee is CodeBee (Why tho?)</div>'+
     '<div id="gamePanel"><img src="./img/bee.png" width=50% onclick="addClick()"></div>'+
-    '<div id="gamePanel"><div id="clicks">'+getClicks()+'</div></div>'+
+    '<div id="gamePanel"><div id="clicks">Loading Game</div></div>'+
     '</div><div style="height:80vh"><div>'
     //the bee flying range
-    html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return false" onmousemove="return false" onMouseClick="return false" `><input type="range" min="1" max="'+maxClicks+'"value="0" class="slider" id="myRange">'
+    html+='<div class="slidecontainer" onmousedown="return false" onmouseout="return'+
+    ' false" onmousemove="return false" onMouseClick="return false" `><input type="range"'+
+    ' min="1" max="'+maxClicks+'"value="0" class="slider" id="myRange">'
     //reload when maxed out
-    html+='<div id="reload"><h1 style="padding-top: 3vh;">CodeBee Needs 1.000.000 Clicks to get to New York<br>This means CodeBee flew a total distance of :'+(1000000-currentClicks) + ' clicks to get to New York<h2><br>This means CodeBee flew a total distance of :'+((currentClicks/maxClicks)*(distance/(100*1000))).toFixed(2)+' kilometers.</h1></div>'
+    html+='<div id="reload"><h1 style="padding-top: 3vh;"></div>'
     set(html)
     setSlider();
+    getClicks()
 }
 
 
 
 function addClick(){
-
-    console.log('start')
+    thisSittingClicks++;
+    //let a player write his name down
+    if(thisSittingClicks==1000)
+    {
+        getSecret()
+    }else if(thisSittingClicks==2000){
+        getSecret2()
+    }
+    console.log(thisSittingClicks)
     if(currentClicks<maxClicks){
-        console.log('click')
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://api.countapi.xyz/hit/codebee");
         xhr.responseType = "json";
         xhr.onload = function() {
             var check =  Math.min(`${this.response.value}`,maxClicks);
-           
-            console.log(check)
-            document.getElementById('clicks').innerHTML= check
+            document.getElementById('clicks').innerHTML= (check+' ('+ (check/10000).toFixed(2)+'%)')
             document.getElementById('myRange').value= `${this.response.value}`
         }
         xhr.send();
     }
 }
     
+function getSecret(){
+ alert('The Code is CC3')
+}
+function getSecret2(){
+    window.open('https://codechrisb.github.io/phone.html')
+}
+
 function getClicks(){
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.countapi.xyz/get/codebee");
     xhr.responseType = "json";
     xhr.onload = function() {
-        document.getElementById('clicks').innerHTML= `${this.response.value}`
+        var check =  Math.min(`${this.response.value}`,maxClicks);
+        document.getElementById('clicks').innerHTML= (check+' ('+ (check/10000).toFixed(2)+'%)')
         currentClicks = `${this.response.value}`
         document.getElementById('reload').innerHTML= 
         '<h2><br>CodeBee needs ' +(1000000-currentClicks) + ' clicks ('+
@@ -249,9 +296,27 @@ var timeline = [
 ]
     
 var career = [
-    {date: 'Future', text:'Maybe at your Company ?<br><a  href="#" onclick="getContact()">Contact me</a>'},
-    {date: '2020', text:'Internship at <a href="https://www.cadt-solutions.com">CAD+T</a><br>8 Weeks<br> Frontend Development Javascript + Vue.js<br>Unit Testing'},
-    {date: '2019', text:'Red Cross Youth Group leader<br>For more information on this topic <a href="https://www.jugendrotkreuz.at/oberoesterreich/angebote/jrk-gruppen/mithelfen-als-jugendgruppenleiter">click here.</a>'},
-    {date: '2016', text:'Internship at <a href="https://www.lpbz-ooeg.at/schloss-gschwendt">Schloss-Gschwendt</a><br>3 Days<br>We had to work at any Company for 3 days and I choosed this, because my Red Cross Group Leader recommended it to me.  </a>'},
+    {title:'Right Now',date: 'Future', text:'Maybe at your Company ?<br><a  href="#" onclick="getContact()">Contact me</a>'},
+    {title:'CAD+T',date: '2020', text:'Internship at <a href="https://www.cadt-solutions.com">CAD+T</a><br>8 Weeks<br> Frontend Development Javascript + Vue.js<br>Unit Testing'},
+    {title:'Red Cross',date: '2019', text:'Red Cross Youth Group leader<br>For more information on this topic <a href="https://www.jugendrotkreuz.at/oberoesterreich/angebote/jrk-gruppen/mithelfen-als-jugendgruppenleiter">click here.</a>'},
+    {title:'Schloss Geschwendt',date: '2016', text:'Internship at <a href="https://www.lpbz-ooeg.at/schloss-gschwendt">Schloss-Gschwendt</a><br>3 Days<br>We had to work at any Company for 3 days and I choosed this, because my Red Cross Group Leader recommended it to me.  </a>'},
+]
 
+
+function getWave(){
+    return waves[(Date.now()/(1000*60)%11).toFixed(0)]
+}
+
+var waves = [
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,133.3C480,139,600,117,720,128C840,139,960,181,1080,165.3C1200,149,1320,75,1380,37.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,74.7C480,85,600,107,720,128C840,149,960,171,1080,176C1200,181,1320,171,1380,165.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L60,101.3C120,139,240,213,360,250.7C480,288,600,288,720,282.7C840,277,960,267,1080,224C1200,181,1320,107,1380,69.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,256L60,234.7C120,213,240,171,360,176C480,181,600,235,720,229.3C840,224,960,160,1080,149.3C1200,139,1320,181,1380,202.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,90.7C480,117,600,171,720,192C840,213,960,203,1080,197.3C1200,192,1320,192,1380,192L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L8.6,106.7C17.1,85,34,43,51,53.3C68.6,64,86,128,103,133.3C120,139,137,85,154,80C171.4,75,189,117,206,144C222.9,171,240,181,257,202.7C274.3,224,291,256,309,261.3C325.7,267,343,245,360,218.7C377.1,192,394,160,411,128C428.6,96,446,64,463,53.3C480,43,497,53,514,74.7C531.4,96,549,128,566,122.7C582.9,117,600,75,617,80C634.3,85,651,139,669,160C685.7,181,703,171,720,160C737.1,149,754,139,771,138.7C788.6,139,806,149,823,133.3C840,117,857,75,874,101.3C891.4,128,909,224,926,218.7C942.9,213,960,107,977,58.7C994.3,11,1011,21,1029,64C1045.7,107,1063,181,1080,202.7C1097.1,224,1114,192,1131,149.3C1148.6,107,1166,53,1183,53.3C1200,53,1217,107,1234,106.7C1251.4,107,1269,53,1286,58.7C1302.9,64,1320,128,1337,165.3C1354.3,203,1371,213,1389,218.7C1405.7,224,1423,224,1431,224L1440,224L1440,0L1431.4,0C1422.9,0,1406,0,1389,0C1371.4,0,1354,0,1337,0C1320,0,1303,0,1286,0C1268.6,0,1251,0,1234,0C1217.1,0,1200,0,1183,0C1165.7,0,1149,0,1131,0C1114.3,0,1097,0,1080,0C1062.9,0,1046,0,1029,0C1011.4,0,994,0,977,0C960,0,943,0,926,0C908.6,0,891,0,874,0C857.1,0,840,0,823,0C805.7,0,789,0,771,0C754.3,0,737,0,720,0C702.9,0,686,0,669,0C651.4,0,634,0,617,0C600,0,583,0,566,0C548.6,0,531,0,514,0C497.1,0,480,0,463,0C445.7,0,429,0,411,0C394.3,0,377,0,360,0C342.9,0,326,0,309,0C291.4,0,274,0,257,0C240,0,223,0,206,0C188.6,0,171,0,154,0C137.1,0,120,0,103,0C85.7,0,69,0,51,0C34.3,0,17,0,9,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L8.6,138.7C17.1,117,34,75,51,69.3C68.6,64,86,96,103,101.3C120,107,137,85,154,106.7C171.4,128,189,192,206,218.7C222.9,245,240,235,257,213.3C274.3,192,291,160,309,160C325.7,160,343,192,360,197.3C377.1,203,394,181,411,165.3C428.6,149,446,139,463,149.3C480,160,497,192,514,202.7C531.4,213,549,203,566,197.3C582.9,192,600,192,617,181.3C634.3,171,651,149,669,160C685.7,171,703,213,720,224C737.1,235,754,213,771,208C788.6,203,806,213,823,181.3C840,149,857,75,874,42.7C891.4,11,909,21,926,32C942.9,43,960,53,977,96C994.3,139,1011,213,1029,208C1045.7,203,1063,117,1080,112C1097.1,107,1114,181,1131,181.3C1148.6,181,1166,107,1183,90.7C1200,75,1217,117,1234,165.3C1251.4,213,1269,267,1286,272C1302.9,277,1320,235,1337,229.3C1354.3,224,1371,256,1389,272C1405.7,288,1423,288,1431,288L1440,288L1440,0L1431.4,0C1422.9,0,1406,0,1389,0C1371.4,0,1354,0,1337,0C1320,0,1303,0,1286,0C1268.6,0,1251,0,1234,0C1217.1,0,1200,0,1183,0C1165.7,0,1149,0,1131,0C1114.3,0,1097,0,1080,0C1062.9,0,1046,0,1029,0C1011.4,0,994,0,977,0C960,0,943,0,926,0C908.6,0,891,0,874,0C857.1,0,840,0,823,0C805.7,0,789,0,771,0C754.3,0,737,0,720,0C702.9,0,686,0,669,0C651.4,0,634,0,617,0C600,0,583,0,566,0C548.6,0,531,0,514,0C497.1,0,480,0,463,0C445.7,0,429,0,411,0C394.3,0,377,0,360,0C342.9,0,326,0,309,0C291.4,0,274,0,257,0C240,0,223,0,206,0C188.6,0,171,0,154,0C137.1,0,120,0,103,0C85.7,0,69,0,51,0C34.3,0,17,0,9,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L16,144C32,128,64,96,96,90.7C128,85,160,107,192,112C224,117,256,107,288,101.3C320,96,352,96,384,90.7C416,85,448,75,480,74.7C512,75,544,85,576,90.7C608,96,640,96,672,80C704,64,736,32,768,21.3C800,11,832,21,864,69.3C896,117,928,203,960,208C992,213,1024,139,1056,90.7C1088,43,1120,21,1152,37.3C1184,53,1216,107,1248,144C1280,181,1312,203,1344,176C1376,149,1408,75,1424,37.3L1440,0L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L90,128L180,96L270,64L360,96L450,192L540,224L630,32L720,128L810,64L900,64L990,256L1080,320L1170,288L1260,96L1350,256L1440,128L1440,0L1350,0L1260,0L1170,0L1080,0L990,0L900,0L810,0L720,0L630,0L540,0L450,0L360,0L270,0L180,0L90,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,64L80,101.3C160,139,320,213,480,240C640,267,800,245,960,240C1120,235,1280,245,1360,250.7L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L17.1,138.7C34.3,149,69,171,103,192C137.1,213,171,235,206,213.3C240,192,274,128,309,101.3C342.9,75,377,85,411,80C445.7,75,480,53,514,64C548.6,75,583,117,617,160C651.4,203,686,245,720,218.7C754.3,192,789,96,823,48C857.1,0,891,0,926,10.7C960,21,994,43,1029,42.7C1062.9,43,1097,21,1131,42.7C1165.7,64,1200,128,1234,165.3C1268.6,203,1303,213,1337,213.3C1371.4,213,1406,203,1423,197.3L1440,192L1440,0L1422.9,0C1405.7,0,1371,0,1337,0C1302.9,0,1269,0,1234,0C1200,0,1166,0,1131,0C1097.1,0,1063,0,1029,0C994.3,0,960,0,926,0C891.4,0,857,0,823,0C788.6,0,754,0,720,0C685.7,0,651,0,617,0C582.9,0,549,0,514,0C480,0,446,0,411,0C377.1,0,343,0,309,0C274.3,0,240,0,206,0C171.4,0,137,0,103,0C68.6,0,34,0,17,0L0,0Z"></path></svg>'
 ]
