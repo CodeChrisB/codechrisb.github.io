@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./css/version.css">
   <!--Js Scripts-->
 
-<body onload="version()">
+<body id="body" onload="version()">
   <div id="version"></div>
 </body>
 
@@ -24,8 +24,8 @@
 
     devText = 'Dev'+ week + 'w'+ v;
     stableText = 'Stable'+ week + 'w'+ v
-    document.getElementById('version').innerHTML = 'Dev'+ week + 'w'+ v +'<button onclick="dev()">Copy Dev</button><br>' +
-                                                   'Stable'+ week + 'w'+ v+'<button onclick="stable()">Copy Stable</button>'
+    document.getElementById('version').innerHTML = 'Dev'+ week + 'w'+ v +'<button id="dev" onclick="dev()">Copy Dev</button><br>' +
+                                                   'Stable'+ week + 'w'+ v+'<button id="stable" onclick="stable()">Copy Stable</button>'
   }
 
   function dev(){
@@ -35,6 +35,10 @@
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+    document.getElementById('stable').textContent='Copy Stable'
+    document.getElementById('dev').textContent='Copied'
+    document.getElementById('dev').style = 'background: red'
+    document.getElementById('stable').style = 'background: #4CAF50'
   }
 
   function stable(){
@@ -44,5 +48,10 @@
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+    document.getElementById('stable').textContent='Copied'
+    document.getElementById('dev').textContent='Copy Dev'
+    document.getElementById('stable').style = 'background: red'
+    document.getElementById('dev').style = 'background: #4CAF50'
   }
+
 </script>
