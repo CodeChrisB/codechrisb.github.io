@@ -4,8 +4,6 @@ body{
 
 
 div{
-    left: 50%;
-    top: 50%;
     position: absolute;
     color: black;
     font-size: 100;
