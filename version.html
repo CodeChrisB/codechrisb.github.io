@@ -1,0 +1,48 @@
+<head>
+  <!--Meta Data-->
+  <title>Project Version</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='shortcut icon' type='image/x-icon' href='./img/headerIcon.png'>
+  <!--Css Styling-->
+  <link rel="stylesheet" href="./css/version.css">
+  <!--Js Scripts-->
+
+<body onload="version()">
+  <div id="version"></div>
+</body>
+
+<script>
+  var devText = ''
+  var stableText = ''
+  function version(){
+    var d = new Date();
+    var v = d.getFullYear()%1000
+
+    let onejan = new Date(d.getFullYear(), 0, 1);
+    let week = Math.ceil( (((d.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7 );
+
+    devText = 'Dev'+ week + 'w'+ v;
+    stableText = 'Stable'+ week + 'w'+ v
+    document.getElementById('version').innerHTML = 'Dev'+ week + 'w'+ v +'<button onclick="dev()">Copy Dev</button><br>' +
+                                                   'Stable'+ week + 'w'+ v+'<button onclick="stable()">Copy Stable</button>'
+  }
+
+  function dev(){
+    const el = document.createElement('textarea');
+    el.value = devText;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
+
+  function stable(){
+    const el = document.createElement('textarea');
+    el.value = stableText;  
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
+</script>
