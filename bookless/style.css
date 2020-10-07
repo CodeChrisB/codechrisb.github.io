@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
-p {
+body{
+  overflow-x: hidden;
+}
+
+p, pre {
   line-height: 2;
 }
 
@@ -33,7 +37,7 @@ nav {
 }
 
 nav.scrolled {
-  background:#fff;
+  background:#51adcf;
   box-shadow: 0px 4px 4px 0px rgba(50, 50, 50, 0.1);
 }
 
@@ -49,9 +53,9 @@ nav ul {
 
 nav ul a {
   text-decoration: none;
-  color:#474747;
+  color:#000000;
   margin:0 32px;
-  font-size:14px;
+  font-size:20px;
   text-transform: uppercase;
 }
 
@@ -70,7 +74,7 @@ header {
 header h1 {
   font-family: "Raleway";
   text-transform: uppercase;
-  color:#fff;
+  color:rgb(0, 0, 0);
   font-size:120px;
 }
 
@@ -79,6 +83,7 @@ header h1 {
 section {
   height:400px;
   display: flex;
+  background:#a5ecd7;
 }
 
 .section-follow {
@@ -99,7 +104,7 @@ section {
   width:150px;
   height:44px;
   margin: 0 auto;
-  border-bottom: 1px solid #929292;
+  border-bottom: 1px solid #3f69ff;
 }
 
 section h3 {
@@ -120,7 +125,7 @@ i:hover {
 
 section:nth-child(2n) {
   flex-direction: row-reverse;
-  background:#0f141a;
+  background:#51adcf;
   color:#fff;
 }
 
@@ -155,7 +160,7 @@ section .image:hover {
 
 footer {
   padding:32px 0;
-  background:#000;
+  background:#256ae0;
   color:#eee;
   font-family: 'Raleway';
   text-align: center;
