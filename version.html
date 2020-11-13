@@ -16,6 +16,10 @@
   var devText = ''
   var stableText = ''
   function version(){
+
+
+
+
     var d = new Date();
     var v = d.getFullYear()%1000
 
@@ -24,9 +28,25 @@
 
     devText = 'Dev'+ week + 'w'+ v;
     stableText = 'Stable'+ week + 'w'+ v
+
+    const queryString = window.location.search;
+    console.log(queryString);
+
+    if(queryString == '')
     document.getElementById('version').innerHTML = '<div id="devBuild">Dev'+ week + 'w'+ v +'</div><button id="dev" onclick="dev()">Copy Dev</button><br>' +
                                                    'Stable'+ week + 'w'+ v+'<button id="stable" onclick="stable()">Copy Stable</button>'
-  }
+ 
+
+    const urlParams = new URLSearchParams(queryString);
+    const dev = urlParams.get('dev')
+    console.log(dev == 1)
+
+    if(dev == 1){
+      alert('dev')
+      document.getElementById('body').innerHTML = 'Dev'+ week + 'w'+ v;
+ 
+    }
+}
 
   function dev(){
     const el = document.createElement('textarea');
