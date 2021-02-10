@@ -24,6 +24,7 @@ h1{
     font-size: 25pt;
 }
 
+/*Remove all the normal button stuff*/
 .btn {
     width: 20%;
 	border: none;
@@ -32,9 +33,9 @@ h1{
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 25px 0px;
 	display: inline-block;
-	margin: 15px 30px;
+	margin: 15px 0px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -54,7 +55,7 @@ h1{
 	transition: all 0.3s;
 }
 
-/* Button 2 */
+
 .btn {
 	background: #cb4e4e;
 	color: #fff;
@@ -68,4 +69,16 @@ h1{
 .btn:hover {
 	box-shadow: 0 4px #ab3c3c;
 	top: 2px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .btn{
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+    .btn{
+		width: 90%;
+	}
 }
