@@ -1,0 +1,51 @@
+<head>
+  <!--Meta Data-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='shortcut icon' type='image/x-icon' href='../img/headerIcon.png' >
+  <!--Css Styling-->
+  <link rel="stylesheet" href="../css/login.css">
+    <!--Js Scripts-->
+    
+    <script src="../js/moodle.js"></script>>
+
+</head>
+
+<html>
+
+</script>
+  <body onload="down()">
+      <form class="box"  id="form" autocomplete="off">
+          <h1>Download Moodle</h1>
+          <input id="username" type="text" name="" placeholder="Username" required>
+          <input id="password" type ="password" name="" placeholder="Password" required>
+          <input type="submit" onclick=down() name="" placeholder="Download">
+      </form>
+  </body>
+</html>
+
+
+
+<script>
+  function down(){
+    let user = document.getElementById("username").innerText
+    let password = document.getElementById("password").innerText
+
+    //if(user=='' || password == '')
+
+   download("InstantMoodle.html",gethtml("if170015","Powersolar1973"))
+
+}
+ function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+ }
+</script>
