@@ -1,22 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
-        <!--Meta Data-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!--Css Styling-->
-        <link rel="stylesheet" href="style.css">
-        <!--Js Scripts-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag und Monat Konverter</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+            max-height: 50vh; /* Image will be 50% of screen height */
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 10px 0px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1f3aa1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        form button:hover {
+            background-color: #162d72;
+        }
+    </style>
 </head>
+<body>
+    <h1>Tag und Monat Konverter</h1>
+    <form id="dateForm">
+        <label for="day">Tag:</label>
+        <input type="text" id="day" name="day" required>
+        
+        <label for="month">Monat:</label>
+        <select id="month" name="month" required>
+            <option value="1">JAN</option>
+            <option value="2">FEB</option>
+            <option value="3">MÄR</option>
+            <option value="4">APR</option>
+            <option value="5">MAI</option>
+            <option value="6">JUNI</option>
+            <option value="7">JULI</option>
+            <option value="8">AUG</option>
+            <option value="9">SEP</option>
+            <option value="10">OKT</option>
+            <option value="11">NOV</option>
+            <option value="12">DEZ</option>
+        </select>
+        
+        <label for="year">Jahr:</label>
+        <input type="text" id="year" name="year" value="" required>
+        
+        <label for="imageUpload">Bild hochladen:</label>
+        <input type="file" id="imageUpload" accept="image/*" required>
+        
+        <button type="button" onclick="convertDate()">Konvertieren und Zeichnen</button>
+        <button type="button" onclick="downloadImage()">Bild herunterladen</button>
+    </form>
+    
+    <canvas id="canvas"></canvas>
 
+    <script>
+        // Set the default value of the year input to the current year
+        document.getElementById('year').value = new Date().getFullYear();
 
+        function convertDate() {
+            const day = document.getElementById('day').value.padStart(2, '0');
+            const monthNumber = parseInt(document.getElementById('month').value);
+            const year = document.getElementById('year').value;
+            const imageFile = document.getElementById('imageUpload').files[0];
 
+            const months = ['JAN', 'FEB', 'MÄR', 'APR', 'MAI', 'JUNI', 'JULI', 'AUG', 'SEP', 'OKT', 'NOV', 'DEZ'];
+            const month = months[monthNumber - 1];
 
-<html>
-  <body>
-    <section class="color-2">
-      <h1>Here you can view some things from Christoper Buchberger.</h1><br>
-      <a href=https://github.com/CodeChrisB ><button class="btn">Github</button><br></a>
-     <a href=https://www.instagram.com/CodeChrisB/ ><button class="btn">Instagram</button><br></a>
-      <a href=https://codechrisb.github.io/Kids-Project  ><button class="btn">Kids-Project</button><br></a>
-    </section>
-  </body>
+            if (!month) {
+                alert('Ungültige Monatsnummer. Bitte wählen Sie einen gültigen Monat.');
+                return;
+            }
+
+            if (!imageFile) {
+                alert('Bitte laden Sie ein Bild hoch.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    drawText(img, day, month, year);
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(imageFile);
+        }
+
+        function drawText(img, day, month, year) {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Adjust canvas size to match the uploaded image size
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            // Draw the uploaded image onto the canvas
+            ctx.drawImage(img, 0, 0);
+
+            // Define the bounding boxes
+            const dayBox = {x1: 904, y1: 33, x2: 1051, y2: 114, bgColor: 'white'};
+            const monthBox = {x1: 904, y1: 120, x2: 1051, y2: 181, bgColor: 'white'};
+            const yearBox = {x1: 904, y1: 207, x2: 1051, y2: 254, bgColor: '#1f3aa1'};
+
+            // Helper function to draw centered text in a box with a background color and text color
+            function drawCenteredText(text, box, fontSize, color) {
+                ctx.font = `${fontSize}px Lato`;
+                const textWidth = ctx.measureText(text).width;
+                const x = box.x1 + (box.x2 - box.x1 - textWidth) / 2;
+                const y = box.y1 + (box.y2 - box.y1) / 2 + (fontSize / 2) - 5; // Adjust for font height
+                ctx.fillStyle = box.bgColor;
+                ctx.fillRect(box.x1, box.y1, box.x2 - box.x1, box.y2 - box.y1);
+                ctx.fillStyle = color; // Text color
+                ctx.fillText(text, x, y);
+            }
+
+            // Draw the day, month, and year centered in their boxes
+            drawCenteredText(day, dayBox, 50, '#1f3aa1');
+            drawCenteredText(month, monthBox, 35, '#1f3aa1');
+            drawCenteredText(year, yearBox, 30, 'white');
+        }
+
+        function downloadImage() {
+            const canvas = document.getElementById('canvas');
+            const link = document.createElement('a');
+            link.download = 'datum_bild.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
 </html>
